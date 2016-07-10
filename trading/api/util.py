@@ -26,6 +26,7 @@ def find_target_candle(target_candle, date_id_map):
     try:
         matching_candle = date_id_map[target_date]
     except KeyError as e:
+        print('e', e)
         return None
     return matching_candle
 

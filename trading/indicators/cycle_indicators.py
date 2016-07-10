@@ -1,7 +1,3 @@
-import numpy as np
-import talib
-
-
 def calc_hilbert_transformation_dominant_cycle_period():
     pass
 

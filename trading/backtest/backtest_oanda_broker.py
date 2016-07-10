@@ -2,7 +2,6 @@ import datetime
 import os
 
 from bson import ObjectId
-from oandapy.oandapy import EndpointsMixin
 
 from trading.broker.base import Broker
 from trading.constants.interval import INTERVAL_FORTY_CANDLES
@@ -10,7 +9,7 @@ from trading.constants.granularity import GRANULARITY_DAY
 from trading.backtest.account import Account
 
 
-class BacktestBroker(Broker, EndpointsMixin):
+class BacktestBroker(Broker):
     name = 'Backtest_OANDA'
 
     _account_id = None
@@ -21,6 +20,8 @@ class BacktestBroker(Broker, EndpointsMixin):
     }
 
     def __init__(self, instrument, base_pair, quote_pair):
+        super(BacktestBroker, self).__init__(instrument)
+
         self.account = Account(instrument, base_pair, quote_pair)
         self._current_tick = 0
 
@@ -28,7 +29,7 @@ class BacktestBroker(Broker, EndpointsMixin):
         account_information = self.get_account_info(self.account_id)
         return account_information
 
-    def get_current_price_data(self, instrument):
+    def get_current_price_data(self):
         return self._get_current_price_data()
 
     def get_historical_price_data(self, instrument, count=INTERVAL_FORTY_CANDLES, granularity=GRANULARITY_DAY):

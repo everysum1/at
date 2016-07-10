@@ -7,7 +7,7 @@ from trading.live.live_runner import LiveTradingStrategyRunner
 def main():
     classifier_id = '574db8431689015f6096544c'
 
-    base_pair =  {'currency': 'usd'}
+    base_pair = {'currency': 'usd'}
     quote_pair = {'currency': 'eur'}
 
     instrument = INSTRUMENT_EUR_USD

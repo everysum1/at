@@ -1,7 +1,3 @@
-import numpy as np
-import talib
-
-
 def calc_chaikin_a_d_line():
     pass
 

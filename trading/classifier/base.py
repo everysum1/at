@@ -23,9 +23,9 @@ class Classifier:
     _logger = None
 
     def __init__(self, config):
-        pass
+        self.config = config
 
-    def passes_filter(self, datum):
+    def passes_filter(self, decision):
         return True
 
     @abstractmethod

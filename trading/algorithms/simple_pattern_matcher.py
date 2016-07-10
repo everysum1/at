@@ -103,13 +103,17 @@ class PatternMatch(Strategy):
         decision = SIDE_STAY
         order = None
 
-        if trend == TREND_POSITIVE and volume > self.required_volume and trend_strength > self.required_trend_strength \
+        if trend == TREND_POSITIVE \
+                and volume > self.required_volume \
+                and trend_strength > self.required_trend_strength \
                 and pattern == SIDE_BUY:
 
             order = self.make_order(asking_price, SIDE_BUY)
             decision = SIDE_BUY
 
-        elif trend == TREND_NEGATIVE and volume > self.required_volume and trend_strength > self.required_trend_strength \
+        elif trend == TREND_NEGATIVE \
+                and volume > self.required_volume \
+                and trend_strength > self.required_trend_strength \
                 and pattern == SIDE_SELL:
 
             order = self.make_order(asking_price, SIDE_SELL)

@@ -100,7 +100,7 @@ class StrategyRunnerTests(unittest.TestCase):
 
         order_response = self.runner.make_market_order(side, market_order)
 
-        self.assertEqual(order_response, '') # Todo fix when can actually trade
+        self.assertEqual(order_response, '')  # Todo fix when can actually trade
 
     def test_update_order(self):
         order_response = None

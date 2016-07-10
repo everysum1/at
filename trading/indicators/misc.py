@@ -3,30 +3,32 @@ from trading.indicators.exceptions import TalibIntervalException
 from trading.indicators.volatility_indicators import calc_average_true_range
 
 
-def get_period_high(daily_highs, interval):
+def get_period_high(candle_highs, interval):
     """
     Gets high price of primary pair for target num days
-    :param num_days: target num of days
+    :param candle_highs: list of ints of candle highs
+    :param interval: target number (int) of candles of candles
     :returns: high price (float) over specified period
     """
 
-    if len(daily_highs) < interval:
+    if len(candle_highs) < interval:
         raise TalibIntervalException
 
-    target_range = daily_highs[-interval:]
+    target_range = candle_highs[-interval:]
     return max(target_range)
 
 
-def get_period_low(daily_lows, interval):
+def get_period_low(candle_lows, interval):
     """
     Gets low price of primary pair for target num days
-    :param num_days: target num of days
+    :param candle_lows: list of ints of candle lows
+    :param interval: target number (int) of candles
     :returns: low price (float) over specified period
     """
-    if len(daily_lows) < interval:
+    if len(candle_lows) < interval:
         raise TalibIntervalException
 
-    target_range = daily_lows[-interval:]
+    target_range = candle_lows[-interval:]
     return min(target_range)
 
 

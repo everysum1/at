@@ -10,7 +10,7 @@ def main():
     base_pair = {'currency': 'usd', 'starting_units': 1000}
     quote_pair = {'currency': 'eur', 'starting_units': 0}
     instrument = INSTRUMENT_EUR_USD
-    data_file = '/Users/jnewman/Projects/automated_trading/data/M10_2000.json'
+    data_file = ''
     broker = BacktestDataBroker(instrument, base_pair, quote_pair, data_file)
 
     config = {
@@ -23,7 +23,7 @@ def main():
     }
 
     num_candles = 14316
-    strategy = TrainingStrategyRunner(config, broker, 14316)
+    strategy = TrainingStrategyRunner(config, broker, num_candles)
     strategy.tick()
 
 

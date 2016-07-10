@@ -1,13 +1,11 @@
 import os
 
-from oandapy.oandapy import EndpointsMixin
-
 from trading.broker.base import Broker
 from trading.constants.interval import INTERVAL_FORTY_CANDLES
 from trading.constants.granularity import GRANULARITY_DAY
 
 
-class OandaBroker(Broker, EndpointsMixin):
+class OandaBroker(Broker):
     name = 'Oanda'
 
     _account_id = None
@@ -40,7 +38,7 @@ class OandaBroker(Broker, EndpointsMixin):
                                                      type=order.type,
                                                      price=order.price,
                                                      expiry=order.expiry
-                                                    )
+                                                     )
 
         return order_confirmation
 
@@ -53,6 +51,7 @@ class OandaBroker(Broker, EndpointsMixin):
         import oandapy
 
         if self._oanda is None:
-            self._oanda = oandapy.API(environment=os.environ['OANDA_ENV'], access_token=os.environ['OANDA_ACCESS_TOKEN'])
+            self._oanda = oandapy.API(environment=os.environ['OANDA_ENV'],
+                                      access_token=os.environ['OANDA_ACCESS_TOKEN'])
         return self._oanda
 

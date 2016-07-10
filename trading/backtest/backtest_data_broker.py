@@ -30,7 +30,7 @@ class BacktestDataBroker(Broker):
         account_information = self.get_account_info()
         return account_information
 
-    def get_current_price_data(self, tick):
+    def get_specified_tick_price_data(self, tick):
         backtest_instrument = self.account.instrument
         target_candle = self._historic_data['candles'][tick]
         candle_time = target_candle['time']
@@ -54,6 +54,9 @@ class BacktestDataBroker(Broker):
             raise BacktestBrokerException
         else:
             return historical_data
+
+    def get_current_price_data(self):
+        raise NotImplementedError
 
     def get_backtest_price_data(self, count, granularity):
         historic_data = load_json_file(self.data_file)

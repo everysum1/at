@@ -32,7 +32,7 @@ class BacktestTradingStrategyRunner(TradingStrategyRunner):
                                                                                granularity=self.strategy.granularity,
                                                                                tick=self.tick_num)
 
-                current_market_data = self.broker.get_current_price_data(tick=self.tick_num)
+                current_market_data = self.broker.get_specified_tick_price_data(tick=self.tick_num)
 
                 self.strategy.analyze_data({
                     'historical': historical_market_data,

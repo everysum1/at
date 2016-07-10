@@ -1,7 +1,3 @@
-import numpy as np
-import talib
-
-
 def calc_two_crows():
     pass
 
@@ -165,6 +161,7 @@ def calc_matching_low():
 def calc_mat_hold():
     pass
 
+
 def calc_morning_doji_star():
     pass
 
@@ -175,6 +172,7 @@ def calc_morning_star():
 
 def calc_on_neck_pattern():
     pass
+
 
 def calc_piercing_pattern():
     pass

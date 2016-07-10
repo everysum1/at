@@ -3,7 +3,7 @@ import sys
 import traceback
 
 
-class Logger:
+class Logger(object):
     logging_message = '[{level}] {message} {data}'
     logging_message_no_data = '[{level}] message: {message}'
     log_level = os.environ.get('LOG_LEVEL', 'INFO')

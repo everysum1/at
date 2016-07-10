@@ -10,7 +10,6 @@ def calc_average_true_range(close, high, low, interval):
     if len(high) < required_interval or len(low) < required_interval or len(close) < required_interval:
         raise TalibIntervalException
 
-
     high = high[-required_interval:]
     low = low[-required_interval:]
     close = close[-required_interval:]

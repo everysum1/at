@@ -2,8 +2,7 @@ build
 automated_trading.egg-info
 dist
 .idea
-*.pyc
 .ipynb_checkpoints
-client
 notebooks
 data
+*.pyc
